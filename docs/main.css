@@ -6,7 +6,7 @@
     --secondary-text: #555;
     --background-light: #f8f9fa;
     --card-border: #e0e0e0;
-    
+
     /* Warna untuk pil & kartu */
     --js-bg: #fdf2e9;
     --react-bg: #eaf2f8;
@@ -32,23 +32,29 @@ body {
 
 /* --- Navigasi Header --- */
 .main-nav {
+    position: relative;
     background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
     padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
+    z-index: 100;
 }
 .main-nav .logo {
     font-size: 1.8em;
     font-weight: 700;
 }
-.main-nav ul {
+.nav-menu {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 30px;
+}
+.nav-menu li {
+    margin: 0;
+    padding: 0;
 }
 .main-nav a {
     color: white;
@@ -59,7 +65,16 @@ body {
 .main-nav a:hover {
     opacity: 0.8;
 }
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+}
 
+/* --- Container --- */
 .container {
     max-width: 1100px;
     margin: 50px auto;
@@ -104,7 +119,7 @@ body {
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 0;      /* pastikan tidak bulat */
+    border-radius: 0;
     overflow: hidden;
 }
 .profile-pic-wrapper.banner-style .slide {
@@ -287,6 +302,7 @@ body {
     color: #7f8c8d;
 }
 
+/* --- Slider bulat untuk profil lama --- */
 .slider:not(.banner-style .slider) {
     border-radius: 50%;
 }
@@ -310,6 +326,7 @@ body {
     z-index: 1;
 }
 
+/* --- Footer --- */
 .main-footer {
     margin-top: auto;
     background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
@@ -321,7 +338,107 @@ body {
     border-top-right-radius: 0px;
     font-size: 1rem;
 }
-
 .main-footer i.fa-fire {
     color: #ff4d6d;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .container {
+        margin: 30px auto;
+        padding: 0 10px;
+    }
+    .profile-section {
+        flex-direction: column;
+        gap: 24px;
+        padding: 24px;
+        align-items: stretch;
+    }
+    .profile-info {
+        max-width: 100%;
+    }
+    .profile-pic-wrapper.banner-style {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .main-nav {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between; /* pastikan ini */
+        align-items: center;
+        position: relative;
+    }
+    .nav-toggle {
+        display: block;
+        margin-left: auto; /* dorong ke kanan */
+        z-index: 110;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 100;
+        padding: 0;
+        margin: 0;
+        gap: 0;
+    }
+    .nav-menu.show {
+        display: flex;
+    }
+    .nav-menu li {
+        margin: 0;
+        padding: 16px 0;
+        text-align: center;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .nav-menu li:last-child {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        margin: 10px auto;
+        padding: 0 5px;
+    }
+    .profile-section,
+    .profile-section-banner {
+        padding: 12px;
+        border-radius: 10px;
+    }
+    .profile-info h1 {
+        font-size: 1.5em;
+    }
+    .posts-header h2 {
+        font-size: 1.2em;
+    }
+    .posts-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 2%;
+    }
+    .profile-pic-wrapper.banner-style {
+        aspect-ratio: 16/9;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+    .main-footer {
+        font-size: 0.9em;
+        padding: 18px 8px 12px 8px;
+        border-radius: 0;
+    }
 }

@@ -18,7 +18,10 @@
 
     <nav class="main-nav">
         <div class="logo">My Profile</div>
-        <ul>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
             <li><a href="index.html">Home</a></li>
             <!-- <li><a href="#">About</a></li> -->
             <li><a href="organisasi.html">Organisasi</a></li>
@@ -159,5 +162,14 @@
         <p>&copy; 2025 Vincent GG</p>
         <p>Menyala Abangkuhhh <i class="fas fa-fire"></i><i class="fas fa-fire"></i><i class="fas fa-fire"></i></p>
     </footer>   
+    <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if(navToggle && navMenu){
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
+    </script>
 </body>
 </html>
