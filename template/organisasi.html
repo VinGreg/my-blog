@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincent GG</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../styles/main.css">
+    
+</head>
+<body>
+
+    <nav class="main-nav">
+        <div class="logo">Organization</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="#">About</a></li> -->
+            <li><a href="organisasi.html">Organization</a></li>
+            <li><a href="kontak.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="profile-section-banner">
+            <div class="profile-info">
+                <h1>Vincent G Ginting, S.T.</h1>
+                <p class="title">S1 Teknik Komputer - Universitas Diponegoro</p>
+                <p class="bio">Selama berkuliah, saya aktif dalam organisasi demi mengembangkan minat dan bakat saya serta mengasah softskill saya dalam berbagai bidang untuk mendapatkan pengalaman yang baik selama berkuliah.</p>
+                <div class="skills-pills">  
+                    <span class="skill-pill organisasi">Sosial</span>
+                    <span class="skill-pill organisasi">Minat & Bakat</span>
+                    <span class="skill-pill organisasi">Pengawasan</span>
+                    <span class="skill-pill organisasi">Pengembangan Mahasiswa</span>
+                </div>
+            </div>
+            <div class="profile-pic-wrapper banner-style">
+                <div class="slider">
+                    <img src="../media/senat.jpg" alt="Foto 1" class="slide active">
+                    <img src="../media/kma.jpg" alt="Foto 2" class="slide">
+                    <img src="../media/kma2.jpg" alt="Foto 3" class="slide">
+                    <img src="../media/prmk.jpg" alt="Foto 4" class="slide">
+                </div>
+            </div>
+        </section>
+
+        <section class="latest-posts">
+            <div class="posts-header">
+                <h2>Pengalaman Organisasi Kampus</h2>
+            </div>
+            <div class="posts-grid">
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-kma">Keluarga Mahasiswa Asal Samosir Semarang</span>
+                        <h3>Kepala Bidang Sosial</h3>
+                        <h6>Memimpin program sosial dan mengkoordinasikan tim lintas divisi untuk menyelenggarakan inisiatif keterlibatan masyarakat.</h6>
+                        <div class="card-meta">
+                            <span>2024</span> &bull; <span>Organisasi Regional</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-kma">Keluarga Mahasiswa Asal Samosir Semarang</span>
+                        <h3>Staff Bidang Minat & Bakat</h3>
+                        <h6>Berperan aktif dalam mengembangkan minat dan bakat anggota melalui berbagai program dan kegiatan.</h6>
+                        <div class="card-meta">
+                            <span>2024</span> &bull; <span>Organisasi Regional</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-senat">Senat Mahasiswa Fakultas Teknik</span>
+                        <h3>Senator Badan Kehormatan</h3>
+                        <h6>Menjaga integritas dan etika organisasi, serta memastikan kepatuhan terhadap peraturan yang berlaku dan melaksanakan fungsi pengawasan terhadap kinerja senator</h6>
+                         <div class="card-meta">
+                            <span>2023</span> &bull; <span>Organisasi Fakultas</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-prmk">Persekutuan Rohani Mahasiswa Katolik Fakultas Teknik</span>
+                        <h3>Kepala Bidang Minat & Bakat</h3>
+                        <h6>Mengelola dan memimpin program pengembangan mahasiswa di bidang seni, olahraga, dan pengembangan minat serta bakat</h6>
+                        <div class="card-meta">
+                            <span>2023</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-prmk">Persekutuan Rohani Mahasiswa Katolik Fakultas Teknik</span>
+                        <h3>Staff Bidang Minat & Bakat</h3>
+                        <h6>Melaksanakan program pengembangan mahasiswa di bidang seni, olahraga, dan pengembangan minat serta bakat</h6>
+                        <div class="card-meta">
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="post-card">
+                    <div class="card-content">
+                        <span class="card-tag tag-kesma">Himpunan Mahasiswa Teknik Komputer</span>
+                        <h3>Staff Bidang KESMA</h3>
+                        <h6>Membantu dalam pengembangan program yang bertujuan meningkatkan kesejahteraan mahasiswa dan dukungan akademik.</h6>
+                        <div class="card-meta">
+                            <span>2022</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </div>
+
+    <script>
+    let slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, 2000); // Ganti gambar setiap 2 detik
+    </script>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Vincent GG</p>
+        <p>Menyala Abangkuhhh <i class="fas fa-fire"></i><i class="fas fa-fire"></i><i class="fas fa-fire"></i></p>
+    </footer>   
+</body>
+</html>
