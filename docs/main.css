@@ -442,3 +442,6 @@ body {
         border-radius: 0;
     }
 }
+.bio {
+    text-align: justify;
+}
